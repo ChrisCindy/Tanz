@@ -36,19 +36,13 @@ module.exports = {
 
   // 卜算子统计
   busuanziCount: {
-    enable: false,
+    enable: true,
 
-    site_uv: true,
     site_uv_header: '本站访客数',
     site_uv_footer: '人次',
 
-    site_pv: true,
     site_pv_header: '本站总访问量',
-    site_pv_footer: '次',
-
-    page_pv: true,
-    page_pv_header: '本文总阅读量',
-    page_pv_footer: '次'
+    site_pv_footer: '次'
   },
 
   // 页面底部信息

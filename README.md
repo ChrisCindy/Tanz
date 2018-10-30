@@ -30,9 +30,9 @@ npm run zip
 - 主题源码位于 src 目录下，可按照个人喜好进行自定义修改
 
 ## TODO
-- 不蒜子页面访问量统计
-- 添加 Archives 页面
-- 添加 About 页面
+- [x] 不蒜子网站访问量统计
+- [ ] 添加 Archives 页面
+- [ ] 添加 About 页面
 
 ## Copyright & License
 

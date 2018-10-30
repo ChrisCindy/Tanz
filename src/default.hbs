@@ -38,10 +38,25 @@
     <footer class="site-footer clearfix ">
         <section class="copyright "><a href="{{@blog.url}} ">{{@blog.title}}</a> &copy; {{date format="YYYY "}}</section>
         <section>
-        <a href="https://github.com/ChrisCindy/Yasuko">Theme Yasuko  </a> <a href="https://github.com/ChrisCindy/Yasuko" class="github-repo"><span class="gadget-github"></span>Star</a> Designed by <a href="http://www.fecoding.cn "><%- footer.name %></a>
+        <a href="https://github.com/ChrisCindy/Tanz">Theme Tanz  </a> <a href="https://github.com/ChrisCindy/Tanz" class="github-repo"><span class="gadget-github"></span>Star</a> Designed by <a href="http://www.fecoding.cn "><%- footer.name %></a>
         </section>
-            <section class="poweredby ">Powered by  <a href="https://ghost.org ">Ghost</a></section>
-            <section><a href="http://www.miitbeian.gov.cn/"><%- footer.ICP %></a></section>
+        <section class="poweredby ">Powered by  <a href="https://ghost.org ">Ghost</a></section>
+        <section><a href="http://www.miitbeian.gov.cn/"><%- footer.ICP %></a></section>
+        <% if (busuanziCount.enable) { %>
+        <section>
+          <span id="busuanzi_container_site_uv" style="display:none">
+            <span><%-busuanziCount.site_uv_header %></span>
+            <span id="busuanzi_value_site_uv"></span>
+            <span><%-busuanziCount.site_uv_footer %></span>
+          </span>
+          |
+          <span id="busuanzi_container_site_pv" style="display:none">
+            <span><%-busuanziCount.site_pv_header %></span>
+            <span id="busuanzi_value_site_pv"></span>
+            <span><%-busuanziCount.site_pv_footer %></span>
+          </span>
+        </section>
+        <% } %>
     </footer>
     {{!-- jQuery needs to come before `{{ghost_foot}}` so that jQuery can be used in code injection --}}
     <script type="text/javascript" src="https://upcdn.b0.upaiyun.com/libs/jquery/jquery-2.0.3.min.js"></script>
@@ -59,6 +74,9 @@
     ga('require', 'displayfeatures');
     ga('send', 'pageview');
     </script>
+    <% } %>
+    <% if (busuanziCount.enable) { %>
+    <script async src="{{asset "js/busuanzi.pure.mini.js"}}"></script>
     <% } %>
 </body>
 </html>

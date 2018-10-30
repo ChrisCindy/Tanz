@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {{! Document Settings }}
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    {{! Page Meta }}
+    <title>{{meta_title}}</title>
+    <link rel="shortcut icon" href="{{asset "images/favicon.png"}}">
+    <% if (googleSiteVerification) { %>
+    <meta name="google-site-verification" content="<%= googleSiteVerification%>" />
+    <% } %>
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
+    
+    {{! Styles'n'Scripts }}
+    <link rel="stylesheet" type="text/css" href="{{asset "css/all.min.css"}}" />
+    <% if (comment === 'gitment') { %>
+    <link rel="stylesheet" type="text/css" href="{{asset "css/gitment.min.css"}}" />
+    <% } %>
+    {{! Ghost outputs important style and meta data with this tag }}
+    {{ghost_head}}
+    <% if (baiduAnalytics) { %>
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?<%-baiduAnalytics%>";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+    <% } %>
+</head>
+<body class="{{body_class}} nav-closed">
+{{! Everything else gets inserted here }}
+{{{body}}}
+    <footer class="site-footer clearfix ">
+        <section class="copyright "><a href="{{@blog.url}} ">{{@blog.title}}</a> &copy; {{date format="YYYY "}}</section>
+        <section>
+        <a href="https://github.com/ChrisCindy/Yasuko">Theme Yasuko  </a> <a href="https://github.com/ChrisCindy/Yasuko" class="github-repo"><span class="gadget-github"></span>Star</a> Designed by <a href="http://www.fecoding.cn "><%- footer.name %></a>
+        </section>
+            <section class="poweredby ">Powered by  <a href="https://ghost.org ">Ghost</a></section>
+            <section><a href="http://www.miitbeian.gov.cn/"><%- footer.ICP %></a></section>
+    </footer>
+    {{!-- jQuery needs to come before `{{ghost_foot}}` so that jQuery can be used in code injection --}}
+    <script type="text/javascript" src="https://upcdn.b0.upaiyun.com/libs/jquery/jquery-2.0.3.min.js"></script>
+    {{! Ghost outputs important scripts and data with this tag }}
+    {{ghost_foot}}
+    <script type="text/javascript" src="{{asset "js/all.min.js"}}"></script>
+
+    <% if (googleAnalytics) { %>
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', '<%-googleAnalytics%>', 'auto');
+    ga('require', 'displayfeatures');
+    ga('send', 'pageview');
+    </script>
+    <% } %>
+</body>
+</html>

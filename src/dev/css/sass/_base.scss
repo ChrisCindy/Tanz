@@ -148,10 +148,8 @@ h1 {
     font-size: 0;
     display: block;
 }
-.home-header {
-    // background: url(http://luoleiorg.b0.upaiyun.com/tmp/yasuko/bg.jpeg!/fw/750);
-}
-.home-template, .archive-template {
+.home-header {}
+.home-template, .paged {
     #main {
         max-width: 76.8rem;
     }
@@ -213,10 +211,10 @@ h1 {
         animation-iteration-count: infinite;
     }
 }
-.home-template #main, .archive-template #main, .tag-template #main {
+.home-template #main, .paged #main, .tag-template #main {
     margin: 2rem auto;
 }
-.archive-template {
+.paged {
     .arrow_down {
         // display: none;
     }
@@ -253,7 +251,7 @@ h1 {
 .post-in-list .post-excerpt img {
     display: block;
     width: 100%;
-    min-height: 20rem;
+    min-height: 10rem;
     height: auto;
     border: 0 none;
     font-size: 0;

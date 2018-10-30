@@ -1,0 +1,29 @@
+{{!< default}} 
+<header id="header" data-url="{{@blog.cover_image}}" class="home-header blog-background banner-mask lazy {{#if @blog.cover_image}}"
+  style="background-image: url({{@blog.cover_image}}){{else}}no-cover{{/if}}">
+  <div class="nav-header-container">
+    {{!-- <a href="{{@blog.url}}" class="svg-logo">
+      <img src="{{@blog.logo}}" alt="{{@blog.title}}" />
+    </a> --}}
+    <a href="{{@blog.url}}" class="back-home">Home</a>
+  </div>
+  <div class="header-wrap">
+    <div class="home-info-container">
+      <a href="{{@blog.url}}">
+        <% if (slogon) { %>
+        <h2><%- slogon %></h2>
+        <% } %>
+      </a>
+      <% if (slogonCN) { %>
+      <h4><%- slogonCN %></h4>
+      <% } %>
+    </div>
+    <div class="arrow_down" data-offset="-45">
+      <a href="javascript:;"></a>
+    </div>
+    </header>
+    {{! The main content area on the homepage }}
+    <main id="main" class="content homepage" role="main">
+      {{! Each post will be output using this markup }} {{> "loop"}} {{!! After all the posts, we have the previous/next pagination
+      links }} {{!-- {{pagination}} --}}
+    </main>

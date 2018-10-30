@@ -1,0 +1,189 @@
+{{!< default}}
+
+{{! The comment above "< default" means - insert everything in this file into
+    the {body} of the default.hbs template, which contains our header/footer. }}
+
+{{! Everything inside the #post tags pulls data from the post }}
+{{#post}}
+    {{#if feature_image}}
+    <img src="{{feature_image}}" class="wechat-only">
+    <header id="header" class="home-header blog-background banner-mask lazy" data-url="{{feature_image}}">
+    {{else}}
+    <% if (wechatShareThumbnail) { %>
+    <img src="{{asset '<%- wechatShareThumbnail %>' }}" class="hide">
+    <% } %>
+    <header id="header" class="home-header blog-background banner-mask lazy" data-url="{{blog.cover_image}}" style="background-image:no-cover">
+    {{/if}}
+
+        <div class="nav-header">
+          <div class="nav-header-container">
+             <a href="{{@blog.url}}" class="back-home">Home</a>
+          </div>
+        </div>
+        <div class="header-wrap" >
+            <div class="post-info-container">
+                <h2 class="post-page-title ">
+                {{title}}
+            </h2>
+                <time class="post-page-time">{{date format="DD MMMM YYYY"}}</time>
+                <span class="post-page-author">{{#author}}{{name}}{{/author}}</span>
+                <span class="post-page-tags">
+                    {{tags prefix="" separator=" "}}
+               </span>
+            </div>
+
+        </div>
+        <div class="arrow_down">
+               <a href="javascript:;"></a>
+        </div>
+    </header>
+
+
+
+
+<main class="content" id="main" role="main">
+
+    <article class="{{post_class}}">
+
+     <section class="post-content">
+     <div class="single-post-inner">
+        {{content}}
+        <div class="tag-box">
+          {{tags prefix="" separator=" "}}
+        </div>
+        <% if (reward.enable) { %>
+        <div class="money-like" id="like-money">
+            <div class="reward-button">赏
+            <span class="money-code">
+              <% if (reward.alipay) { %>
+              <span class="alipay-code">
+                <a href="javascript:;">
+                <img data-url="{{asset "<%- reward.alipay %>"}}" class="alipay-img" src="{{asset "<%- reward.alipay %>"}}"><b>支付宝扫码打赏</b>
+                </a>
+              </span>
+              <% } %>
+              <% if (reward.wechatpay) { %>
+              <span class="wechat-code">
+                <img data-url="{{asset "<%- reward.wechatpay %>"}}" class="wechat-img" src="{{asset "<%- reward.wechatpay %>"}}"><b>微信打赏</b>
+              </span>
+              <% } %>
+            </span>
+
+            </div>
+            <p class="money-notice"><%- reward.comment%></p>
+        </div>
+        <% } %>
+        <div class="qr-code">
+            <img src="https://encrypt.proxy.is26.com/qr?content={{url absolute="true"}}" alt="">
+            <p>扫描二维码,分享此文章</p>
+        </div>
+     </div>
+    </section>
+
+
+    {{#author}}
+      <section class="author">
+        {{#if profile_image}}
+        <figure class="author-image">
+          <a class="img" href="javascript:;" style="background-image: url('{{profile_image}}')"><span class="hide">{{name}}'s Picture</span></a>
+        </figure>
+        {{/if}}
+
+      <section class="author-detail">
+        <a href="javascript:;">{{name}}</a>
+        {{#if bio}}
+        <p>{{bio}}</p>
+        {{else}}
+        <p>Read <a href="{{url}}">more posts</a> by this author.</p>
+        {{/if}}
+        <div class="author-meta">
+              {{#if location}}
+            <span class="author-location">{{location}}</span>
+            {{/if}}
+              {{#if website}}
+            <span class="author-link"><a href="{{website}}">{{website}}</a></span>
+            {{/if}}
+        </div>
+        </section>
+      </section>
+        {{/author}}
+    </article>
+      <section class="share">
+        <div class="share-icons" id="share-icons">
+          <% if (social.weibo) { %>
+            <a class="icon-share" href="<%- social.weibo %>">
+                <span class=""><i class="iconfont iconfont-weibo">&#xe607;</i></span>
+            </a>
+          <% } %>
+          <% if (social.twitter) { %>
+            <a class="icon-share" href="<%- social.twitter %>">
+                <span class=""><i class="iconfont iconfont-twitter">&#xe604;</i></span>
+            </a>
+          <% } %>
+          <% if (social.github) { %>
+            <a class="icon-share icon-github" href="<%- social.github %>">
+                <span class=""><i class="iconfont  iconfont-github">&#xe60d;</i></span>
+            </a>
+          <% } %>
+          <% if (social.zhihu) { %>
+            <a class="icon-share" href="<%- social.zhihu %>">
+                <span class=""><i class="iconfont  iconfont-zhihu">&#xe609;</i></span>
+            </a>
+          <% } %>
+        </div>
+    </section>
+<aside class="read-next">
+    {{#next_post}}
+    <a class="read-next-story {{#if feature_image}} lazy" data-url="{{feature_image}}" style="background-image: url(){{else}}no-cover{{/if}}" href="{{url}}">
+        <section class="post">
+            <h2>{{title}}</h2>
+            <p>{{excerpt words="6"}}&hellip;</p>
+        </section>
+    </a>
+    {{/next_post}}
+    {{#prev_post}}
+    <a class="read-next-story prev {{#if feature_image}} lazy" data-url="{{feature_image}}" style="background-image: url(){{else}}no-cover{{/if}}" href="{{url}}">
+        <section class="post">
+            <h2>{{title}}</h2>
+            <p>{{excerpt words="6"}}&hellip;</p>
+        </section>
+    </a>
+    {{/prev_post}}
+</aside>
+<section class="comment-area yasuko-only" >
+<% if (comment === 'sohu') { %>
+<!--PC和WAP自适应版-->
+<div id="SOHUCS" sid="{{id}}" ></div> 
+<% } %>
+</section>
+</main>
+
+
+<% if (comment === 'sohu') { %>
+<script type="text/javascript"> 
+(function(){ 
+var appid = '<%- sohu.appid %>'; 
+var conf = '<%- sohu.conf %>'; 
+var width = window.innerWidth || document.documentElement.clientWidth; 
+if (width < 960) { 
+window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); 
+</script>
+<% } %>
+
+<% if (comment === 'gitment') { %>
+<div id="comments" sid="{{id}}" ></div> 
+<script type="text/javascript" src="{{asset "js/gitment.min.js"}}"></script>
+<script>
+  var gitment = new Gitment({
+    owner: '<%-gitment.owner%>',
+    repo: '<%-gitment.repo%>',
+    oauth: {
+      client_id: '<%-gitment.clientId%>',
+      client_secret: '<%-gitment.clientSecret%>',
+    },
+  })
+  gitment.render('comments')
+</script>
+<% } %>
+<script type="text/javascript" src="{{asset "js/prism.js"}}"></script>
+{{/post}}

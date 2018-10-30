@@ -8,6 +8,7 @@ build/*
 build
 dist/*
 dist
+zipped/*
 
 # Node Modules (use `npm install` to generate these)
 node_modules/*

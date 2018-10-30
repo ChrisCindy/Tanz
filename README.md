@@ -2,6 +2,9 @@
 
 本主题源自 [@foru17](https://github.com/foru17) 的主题 [Yasuko](https://github.com/foru17/Yasuko)，再一次，对如此优秀的设计表示感谢！
 
+# Demo
+[点我查看](http://www.fecoding.cn)
+
 ## New Features
 
 Tanz 在 Yasuko 的基础上增加了以下功能：

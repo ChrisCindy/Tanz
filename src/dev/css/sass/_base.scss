@@ -752,24 +752,34 @@ a.btn-post-excerpt {
     border-radius: .1rem;
     font-family: $googleFontExo, $fontOSX;
 }
-.back-home {
+.menu-list {
     background: none repeat scroll 0 0 transparent;
-    border: 1px solid #fff;
-    border-radius: 0;
     color: #fff;
     font-size: 1.2rem;
     left: 0;
     line-height: 2.4rem;
     opacity: 0.8;
-    padding: .5rem 2.5rem;
     position: absolute;
     text-transform: uppercase;
     top: 2rem;
     z-index: 99;
-    &:active {
-        background: rgba(0, 0, 0, .1);
-    }
 }
+
+.menu-item {
+  color: #fff;
+  margin-left: 5px;
+  &:active {
+    background: rgba(0, 0, 0, .1); 
+}
+}
+
+.home-button {
+    border: 1px solid #fff;
+    border-radius: 0;
+    padding: .5rem 2.5rem;
+    margin-left: 0;
+}
+
 .svg-logo {
     left: 0;
     position: absolute;
@@ -1326,4 +1336,36 @@ Copyright (c) 2014 Daniel Eden
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+}
+
+
+.archives {
+  .item {
+    padding: 20px 20px 12px 20px;
+    overflow: hidden;
+    border-bottom: 1px solid #eee;
+    
+    h3 {
+      margin: 4px 0 0 -120px;
+      float: left;
+    }
+        
+    .archives-list {
+      list-style: none;
+      line-height: 24px;
+      font-size: 20px;
+
+      time {
+        margin-right: 5px;
+        color: #999;
+        display: inline-block;
+        width: 65px;
+        font-family: monospace;
+      }
+
+      a {
+        color: rgb(84, 181, 219);
+      }
+    }
+  }
 }

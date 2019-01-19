@@ -57,19 +57,6 @@ gulp.task('clean', function (cb) {
 
 // Sass 处理
 gulp.task('sass', ['clean'], function () {
-  // gulp.src(paths.sass)
-  //   .pipe(plumber())
-  //   .pipe(sourcemaps.init())
-  //   .pipe(sass())
-  //   .pipe(concat('style.css'))
-  //   .pipe(gulp.dest(paths.css))
-  //   .pipe(minifycss())
-  //   .pipe(sourcemaps.write({
-  //     sourceRoot: '/css/sass'
-  //   }))
-  //   .pipe(rename('dev.min.css'))
-  //   .pipe(gulp.dest('assets/css'));
-
   return gulp.src(paths.sass)
     .pipe(plumber())
     .pipe(sass())

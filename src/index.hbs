@@ -5,7 +5,11 @@
     {{!-- <a href="{{@blog.url}}" class="svg-logo">
       <img src="{{@blog.logo}}" alt="{{@blog.title}}" />
     </a> --}}
-    <a href="{{@blog.url}}" class="back-home">Home</a>
+    <span class="menu-list"> 
+      <a href="{{@blog.url}}" class="menu-item home-button">Home</a>
+      <a href="/archives" class="menu-item">Archives</a>
+    </span>
+
   </div>
   <div class="header-wrap">
     <div class="home-info-container">
@@ -20,6 +24,7 @@
     </div>
     <div class="arrow_down" data-offset="-45">
       <a href="javascript:;"></a>
+    </div>
     </div>
     </header>
     {{! The main content area on the homepage }}

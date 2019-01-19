@@ -34,7 +34,7 @@ npm run zip
 
 ## TODO
 - [x] 不蒜子网站访问量统计
-- [ ] 添加 Archives 页面
+- [x] 添加 Archives 页面
 - [ ] 添加 About 页面
 - [ ] 添加 RSS 订阅功能
 - [ ] 添加全站搜索功能

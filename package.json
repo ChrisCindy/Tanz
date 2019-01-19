@@ -1,9 +1,9 @@
 {
   "name": "tanz",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A configurable Ghost theme designed by @foru17 and improved by @chriscindy",
   "author": "@chriscindy",
-  "homepage": "https://www.fecoding.cn",
+  "homepage": "https://fecoding.cn",
   "scripts": {
     "build": "gulp build",
     "zip": "gulp zip"

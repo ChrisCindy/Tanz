@@ -3,7 +3,7 @@
 本主题源自 [@foru17](https://github.com/foru17) 的主题 [Yasuko](https://github.com/foru17/Yasuko)，再一次，对如此优秀的设计表示感谢！
 
 ## Demo
-[点我查看](http://www.fecoding.cn)
+[点我查看](https://fecoding.cn)
 
 ## New Features
 
@@ -11,7 +11,7 @@ Tanz 在 Yasuko 的基础上增加了以下功能：
 
 - 博客多项内容可配置
 - gulp 工作流的完善
-- 可切换的评论系统
+- 可切换的评论系统（支持搜狐畅言、gitalk）
 - 百度统计、谷歌统计
 
 ## Usage
@@ -35,6 +35,7 @@ npm run zip
 ## TODO
 - [x] 不蒜子网站访问量统计
 - [x] 添加 Archives 页面
+- [x] 添加 gitalk 评论系统
 - [ ] 添加 About 页面
 - [ ] 添加 RSS 订阅功能
 - [ ] 添加全站搜索功能

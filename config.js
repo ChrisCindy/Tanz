@@ -52,20 +52,20 @@ module.exports = {
   },
 
   // 评论系统
-  // 可选：搜狐畅言(sohu) / gitment(gitment)
-  comment: 'sohu',
+  // 可选：搜狐畅言(sohu) / gitalk(gitalk)
+  comment: 'gitalk',
 
   // 搜狐畅言配置
   sohu: {
-    appid: 'cytv5fT5K',
-    conf: 'prod_fb455d18d8b9e07e5b104783e647bbc6'
+    appid: '',
+    conf: ''
   },
-  // gitment 配置
-  gitment: {
-    owner: 'Your GitHub ID',
-    repo: 'The repo to store comments',
-    clientId: 'Your client ID',
-    clientSecret: 'Your client secret'
+  // gitalk 配置
+  gitalk: {
+    clientID: '',
+    clientSecret: '',
+    repo: '',
+    owner: ''
   }
 
 }

@@ -15,8 +15,8 @@
     
     {{! Styles'n'Scripts }}
     <link rel="stylesheet" type="text/css" href="{{asset "css/all.min.css"}}" />
-    <% if (comment === 'gitment') { %>
-    <link rel="stylesheet" type="text/css" href="{{asset "css/gitment.min.css"}}" />
+    <% if (comment === 'gitalk') { %>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
     <% } %>
     {{! Ghost outputs important style and meta data with this tag }}
     {{ghost_head}}

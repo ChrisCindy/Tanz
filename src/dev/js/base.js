@@ -104,7 +104,7 @@ var General = {
   webFontLoader: function () {
     WebFontConfig = {
       loading: function () {
-        console.log('loading font');
+        // console.log('loading font');
       },
       custom: {
         families: ['Exo', 'iconfont'],
@@ -198,7 +198,7 @@ var General = {
       tmp.href = _src;
       _selfDomain = tmp.hostname;
       General.urlIconlize(_selfDomain);
-      console.log(_selfDomain);
+      // console.log(_selfDomain);
       $(this).prepend('<i class="iconfont ' + General.urlIconlize(_selfDomain) + '"></i>');
       var _selfColor = $(this).find('i').css('color'),
         _originalColor = $(this).css('color');
@@ -226,7 +226,7 @@ var General = {
     }
 
     $('.money-like .reward-button').hover(function () {
-      console.log('悬浮');
+      // console.log('悬浮');
       // $('img.wechat-img').attr('src', loadQR.wechat);
       // $('img.alipay-img').attr('src', loadQR.alipay);
       $('.money-code').fadeIn();
@@ -268,16 +268,16 @@ var ImageSmartLoader = {
     var TestImages = {
       demo: "UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAsAAAABBxAREYiI/gcAAABWUDggGAAAADABAJ0BKgEAAQABABwlpAADcAD+/gbQAA=="
     };
-    console.log('支持Webp哦');
+    // console.log('支持Webp哦');
     var img = new Image();
     img.onload = function () {
       var result = (img.width > 0) && (img.height > 0);
-      console.log('支持Webp');
+      // console.log('支持Webp');
       ImageSmartLoader.isWebPSupported = true;
       ImageSmartLoader.webPLoader();
     };
     img.onerror = function () {
-      console.log('不支持Webp');
+      // console.log('不支持Webp');
       ImageSmartLoader.isWebPSupported = false;
       ImageSmartLoader.webPLoader();
     };
@@ -285,12 +285,12 @@ var ImageSmartLoader = {
 
   },
   imgLoader: function () {
-    console.log('加载默认图片');
+    // console.log('加载默认图片');
   },
   webPLoader: function () {
-    console.log('加载webP');
+    // console.log('加载webP');
     if (ImageSmartLoader.isWebPSupported === true) {
-      console.log('宽度是' + General.viewWidth);
+      // console.log('宽度是' + General.viewWidth);
       if (General.viewWidth === 768) {
         $(".lazy").lazyload({
           advanced_load: true,
